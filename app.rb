@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "json"
 
 module App
   class Main < Sinatra::Base
@@ -17,8 +18,9 @@ module App
       logger.debug "debug message"
       logger.info "info message"
       port = ENV['VCAP_APP_PORT']
+      appinfo = JSON.pretty_unparse(JSON.parse(ENV['VCAP_APPLICATION']))
       rurl = request.url
-      "\n<h1>Hello World 2014 from port #{port}!! Request url #{rurl}</h1>\n"
+      "\n<h1>Hello World 2014 from port #{port}</h1>\n<pre>#{appinfo}</pre>\n"
     end
 
     get "/broken" do
