@@ -6,6 +6,14 @@ This simple application displays the request URL, the port number an some applic
 The script for the demo is as follows:
 
 # Clone this repo
+Clone the repo to your local computer:
+```
+git clone https://github.com/christofmarti/hello-cf.git
+```
+and change to the application directory:
+```
+cd hello-cf
+```
 # Deploy the app
 Deploy your app instances using `cf push`. Subsititute `<your-unique-app-id>` with a unique name (e.g. your group id of the course). The name (-n) of your application has to be unique within the same dns `<domain>` of the plattform (`cfapps.io` in case of PWS).
 `hello-cf` is your (internal) name for the app, which has to be provided for each cf-command.
