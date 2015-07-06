@@ -18,9 +18,9 @@ module App
       logger.debug "debug message"
       logger.info "info message"
       port = ENV['VCAP_APP_PORT']
+      greeting = ENV['GREETING']||'World'
       appinfo = JSON.pretty_unparse(JSON.parse(ENV['VCAP_APPLICATION']))
-      rurl = request.url
-      "\n<h1>Hello World 2014 from port #{port}</h1>\n<pre>#{appinfo}</pre>\n"
+      "\n<h1>Hello #{greeting} from port #{port}</h1>\n<pre>#{appinfo}</pre>\n"
     end
 
     get "/broken" do
